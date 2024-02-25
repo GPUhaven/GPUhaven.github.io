@@ -1,8 +1,13 @@
 head {
-    background-color: coral;
-    color: coral;
+    height:100vh;
+    background: linear-gradient(
+        to right,
+        coral 0%
+        coral 50%
+        lightblue 50%
+        lightblue 100%
+    );
 }
-
 body {
     background-color: black;
 }
