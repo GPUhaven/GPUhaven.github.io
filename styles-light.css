@@ -1,35 +1,22 @@
 body {
-    background-color: black;
+    background-color: white;
 }
 
 h1 {
-    color: white;
     text-align: center;
 }
 
 h2 {
-    color: white;
     text-align: center;
 }
 
 h6 {
-    color: white;
     text-align: center;
 }
-
-p {
-    color: white;}
-
-ol {
-    color: white;}
-
-li {
-    color: white;}
 
 .container {
     position: relative;
     text-align: center;
-    color: white;
 }
 
 .silly4090 {
@@ -49,7 +36,7 @@ li {
 
 .button {
     border: none;
-    color: black;
+    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -57,4 +44,4 @@ li {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-}
+  }
