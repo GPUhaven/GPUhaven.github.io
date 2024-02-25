@@ -13,13 +13,23 @@ h2 {
 }
 
 p {
-    color: white;
-}
+    color: white;}
 
 ol {
+    color: white;}
+
+li {
+    color: white;}
+
+.container {
+    position: relative;
+    text-align: center;
     color: white;
 }
 
-li {
-    color: white;
-}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
