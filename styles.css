@@ -8,6 +8,9 @@ body {
         lightblue 100%
     );
 }
+body {
+    background-color: black;
+}
 
 h1 {
     color: white;
