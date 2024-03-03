@@ -1,3 +1,7 @@
+head{
+    background-color: coral;
+}
+
 body {
     background-color: black;
 }
@@ -57,4 +61,5 @@ li {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    justify-content: center;
 }
