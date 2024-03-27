@@ -32,7 +32,6 @@ body {
     display: flex; /* Add this to make flex properties work */
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Use min-height instead of height */
 }
 
 button {
@@ -48,5 +47,4 @@ button {
 .mysection {
     background-color: coral;
     height: 700px;
-    margin-top: 20px; /* Add margin to separate top picture from content */
 }
