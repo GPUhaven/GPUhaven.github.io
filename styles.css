@@ -52,6 +52,10 @@ li {
     transform: translate(-50%, -50%);
 }
 
+container1 {
+    justify-content: center;
+    align-items: center;
+}
 button {
     border: none;
     color: black;
