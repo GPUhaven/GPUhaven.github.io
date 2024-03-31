@@ -40,12 +40,7 @@ h6 {
     background-color: coral;
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 
 button {
     border: none;
