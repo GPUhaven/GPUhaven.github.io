@@ -37,11 +37,23 @@ h6 {
     background-color: coral;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 464px; /* Set the height of the container to match the image */
+    position: relative; /* Set position relative for absolute positioning */
+}
+
+/* Style the title */
 .centered {
+    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure title appears on top of the image */
+    color: white; /* Ensure title text is visible */
 }
 
 button {
