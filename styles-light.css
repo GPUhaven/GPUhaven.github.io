@@ -72,6 +72,12 @@ button {
     align-self: center;
 }
 
+.container1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add some margin for spacing */
+}
+
 .mysection {
     background-color: coral;
     width: 100%;
