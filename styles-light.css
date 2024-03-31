@@ -1,44 +1,67 @@
-head {
+head{
     background-color: coral;
 }
 
-h1, h2, h6 {
+h1 {
     color: white;
-    text-align: center;
+}
+
+h2 {
+    color: white;
 }
 
 body {
     background-color: #dde5f0;
-    margin: 0; /* Reset default margin */
 }
 
-.container {
+h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
+
+
 .silly4090 {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
     max-width: 100%;
     background-color: coral;
 }
 
-
-
-.container1 {
-    display: flex; /* Add this to make flex properties work */
-    justify-content: center;
-    align-items: center;
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 button {
-    background-color: #fff; /* Background color for button */
-    border: 2px solid black; /* Add border to button */
+    border: none;
     color: black;
-    padding: 10px 20px; /* Adjust padding */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-self: center;
 }
 
 .mysection {
     background-color: coral;
+    width: 100%;
     height: 464px;
 }
