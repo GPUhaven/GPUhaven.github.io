@@ -6,5 +6,16 @@
     <link rel="stylesheet" href="styles-light.css">
 </head>
 <body>
-  
+  <h1>How to GPUs Talk with the other parts of your computer?</h1>
+    <h2>Insert canva diagram here when I do it</h2>
+    <h2>(Thats going to be in a while)</h2>
+    <p>To put it simply, the way you GPU talks with the rest of your computer is with the PCIe bus and lane. The PCIe bus, whichcan curently range
+    from 128 bits (on a very budget card, or if you are an Nvidia fan, on mid-range cards), to 384 bits for the top end cards. </p>
+    <p>Although your PCIe bus width can be very important, there is another thing that you need to consider when you think of the 
+    interaction between GPU and the rest of the system. That very special mechanic is your PCIe lanes. </p>
+    <p>PCIe lane count can range from the very basic X1 slot, to the X16 slot which is most commonly used for graphics. X4 is used for NVME 
+     SSDs, and X8 is for the weaker GPUs that you can find on the market. Each lane, which is 16 in the X16 PCIe scenario, has 2 wires. 
+    One of the wires are dedicated to the inbound traffic, and the other one is dedicated for outband traffic, which has double the 
+    bandwidth.</p>
 </body>
+<!-- https://blog.ovhcloud.com/how-pci-express-works-and-why-you-should-care-gpu/ -->
