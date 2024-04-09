@@ -17,5 +17,19 @@
      SSDs, and X8 is for the weaker GPUs that you can find on the market. Each lane, which is 16 in the X16 PCIe scenario, has 2 wires. 
     One of the wires are dedicated to the inbound traffic, and the other one is dedicated for outband traffic, which has double the 
     bandwidth.</p>
+    <h2>Layers To PCIe</h2>
+    <p>The Physical Layer, also known as the Big negotiation layer, is the layer responsible for negotiation of terms and 
+        conditions with the rest of the machice. The Physical Layer recives things such as raw packets, and tells the 
+        sysetm things like the maximum bandwith the GPU can handle. Packets that are recived here are coming from other 
+        PCIe devices or the system, such as the DRAM that the CPU has, and are put inside a frame. There is a single 
+        byte at the beggining and the end of each "fram of packets," which states the start and the end of each frame.
+    </p>
+    <p>
+        The next layer, known as the Data Link Layer Packet (I will be using DLLP for ease of understanding) is the 
+        layer that decodes the mess that was send in the Physical Layer. This layer does a few things, aside from 
+        decoding the Physical Layer. After reciving the packets from the Phyical Layer, it sends a Traansistion Layer 
+        Packet, which is closed by an LCRC (Local Cyclic Reduncancy Check), and is used to check the Transistion 
+        Layer Packet, which is the actual information, for its integtity. If the LCRC is good enough, 
+    </p>
 </body>
 <!-- https://blog.ovhcloud.com/how-pci-express-works-and-why-you-should-care-gpu/ -->
