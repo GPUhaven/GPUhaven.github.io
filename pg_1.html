@@ -9,27 +9,61 @@
   <h1>How GPU Talk with the Other Parts of your Computer</h1>
     <h2>Insert canva diagram here when I do it</h2>
     <h2>(Thats going to be in a while)</h2>
-    <p>To put it simply, the way you GPU talks with the rest of your computer is with the PCIe bus and lane. The PCIe bus, whichcan curently range
-    from 128 bits (on a very budget card, or if you are an Nvidia fan, on mid-range cards), to 384 bits for the top end cards. </p>
-    <p>Although your PCIe bus width can be very important, there is another thing that you need to consider when you think of the 
-    interaction between GPU and the rest of the system. That very special mechanic is your PCIe lanes. </p>
-    <p>PCIe lane count can range from the very basic X1 slot, to the X16 slot which is most commonly used for graphics. X4 is used for NVME 
-     SSDs, and X8 is for the weaker GPUs that you can find on the market. Each lane, which is 16 in the X16 PCIe scenario, has 2 wires. 
-    One of the wires are dedicated to the inbound traffic, and the other one is dedicated for outband traffic, which has double the 
-    bandwidth.</p>
-    <h2>Layers To PCIe</h2>
-    <p>The Physical Layer, also known as the Big negotiation layer, is the layer responsible for negotiation of terms and 
-        conditions with the rest of the machice. The Physical Layer recives things such as raw packets, and tells the 
-        sysetm things like the maximum bandwith the GPU can handle. Packets that are recived here are coming from other 
-        PCIe devices or the system, such as the DRAM that the CPU has, and are put inside a frame. There is a single 
-        byte at the beggining and the end of each "fram of packets," which states the start and the end of each frame.
+    <p>
+        To put it simply, the way you GPU talks with the rest of your computer is with the PCIe bus and lane. 
+        The PCIe bus, whichcan curently range from 128 bits (on a very budget card, or if you are an Nvidia fan, 
+        on mid-range cards), to 384 bits for the top end cards. 
     </p>
     <p>
-        The next layer, known as the Data Link Layer Packet (I will be using DLLP for ease of understanding) is the 
-        layer that decodes the mess that was send in the Physical Layer. This layer does a few things, aside from 
-        decoding the Physical Layer. After reciving the packets from the Phyical Layer, it sends a Traansistion Layer 
+        Although your PCIe bus width can be very important, there is another thing that you need to consider when you think of the 
+        interaction between GPU and the rest of the system. That very special mechanic is your PCIe lanes. 
+    </p>
+    <p>
+        PCIe lane count can range from the very basic X1 slot, to the X16 slot which is most commonly used for 
+        graphics. X4 is used for NVME SSDs, and X8 is for the weaker GPUs that you can find on the market. 
+        Each lane, which is 16 in the X16 PCIe scenario, has 2 wires. One of the wires are dedicated to the inbound 
+        traffic, and the other one is dedicated for outband traffic, which has double the
+        bandwidth.
+    </p>
+    <h2>Layers To PCIe</h2>
+    <p>*If you don't know what they are, Packets are pieces of information!</p>
+    <p>
+        The Physical Layer, also known as the Big Negotiation Layer, is the layer responsible for negotiation of terms and 
+        conditions with the rest of the machine. The Physical Layer recives things such as raw packets, and tells the 
+        sysetm things such as the maximum bandwith the GPU can handle. Packets that are recived here are coming from other 
+        PCIe devices or the system, such as the DRAM that the CPU has, and are put inside a frame. There is a single 
+        byte at the beggining and the end of each "frame of packets," which states the start and the end of each frame.
+    </p>
+    <p>
+        The next layer, known as the Data Link Layer (I will be using DLL for ease of understanding) is the 
+        layer that decodes the mess of packets that was send in the Physical Layer. This layer does a few things, aside from 
+        decoding the Physical Layer. After reciving the packets from the Phyical Layer, it sends a Transistion Layer 
         Packet, which is closed by an LCRC (Local Cyclic Reduncancy Check), and is used to check the Transistion 
-        Layer Packet, which is the actual information, for its integtity. If the LCRC is good enough, 
+        Layer Packet, which is the actual information, for its integtity. If the LCRC is good enough, then the 
+        DLL sends an ACK (an ACKnowledge) signal to the emitter via the Physical Layer. If the data is 
+        messes up in any way, it sends a NAK (Not AcKnowledge) signal to the emjitter which will resend the frame that 
+        lines up with the sequence number, and asks it to try again. This part handles the replay buffer on the reciver 
+        side.
+    </p>
+    <p>
+        The Transaction Layer, which comes after the DLL, is responsible for managing the actual payload. The payload 
+        consists of a header*, and the data that needs to be sent. The Transaction Layer also could digest the ECRC 
+        (End to End Cyclic Redundancy Check). This Transistion Layer packet is coming from the Data link layer, where 
+        is has been decapsulated. After this, a data check will be done if it is needed or requested. 
+        This will check the logic, and make sure that there is no packet corruption when passing data fron the DLL 
+        to this layer.
+    </p>
+    <p>*The header is describing the type of transaction such as:</p>
+    <ul>
+        <li>Memory Transaction</li>
+        <li>I/O Transaction</li>
+        <li>Configuration Transaction</li>
+        <li>Message Transaction</li>
+    </ul>
+    <p>
+        The role of the Application Layer, which is the last and final layer,
+        is to handle the User Logic. This layer is sending the Header and the data payload to the Transaction Layer. 
+        The magic happens in this layer where data in rooted to different hardware components.
     </p>
 </body>
 <!-- https://blog.ovhcloud.com/how-pci-express-works-and-why-you-should-care-gpu/ -->
