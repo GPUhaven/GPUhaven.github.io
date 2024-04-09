@@ -37,12 +37,6 @@ h6 {
     background-color: coral;
 }
 
-.center_super {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 
 .container {
     display: flex;
@@ -93,4 +87,15 @@ button {
     background-color: coral;
     width: 100%;
     height: 464px;
+}
+
+
+
+.image-container {
+    text-align: center; /* Center the image horizontally */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.centered_super {
+    display: inline-block; /* Ensure image behaves like a block element */
 }
