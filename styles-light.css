@@ -37,6 +37,13 @@ h6 {
     background-color: coral;
 }
 
+.center_super {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .container {
     display: flex;
     justify-content: center;
