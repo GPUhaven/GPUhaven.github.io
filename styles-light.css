@@ -104,11 +104,9 @@ button {
 .container2 {
     display: flex;
     justify-content: right;
-    margin-top: 20px; /* Add some margin for spacing */
 }
 
 .container3 {
     display: flex;
     justify-content: left;
-    margin-top: 20px; /* Add some margin for spacing */
 }
