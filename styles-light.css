@@ -103,6 +103,6 @@ button {
 
 .container2 {
     display: flex;
-    justify-content: left;
+    justify-content: right;
     margin-top: 20px; /* Add some margin for spacing */
 }
