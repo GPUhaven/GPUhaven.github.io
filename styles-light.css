@@ -99,3 +99,10 @@ button {
 .centered_super {
     display: inline-block; /* Ensure image behaves like a block element */
 }
+
+
+.container2 {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px; /* Add some margin for spacing */
+}
