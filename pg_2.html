@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles-light.css">
-    <h1>How does a GPU Renders Graphics?</h1>
+    <h1>With what means does a GPU Render Graphics?</h1>
     <img class="centered_super_1" src="die_circle.png" alt="A Map of the Modern GPU, with a circle on what we are focusing on which is the die now" height="1024" width="961">
     <h6>By ScotXW - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=61055349</h6>
+</head>
+<body>
     <p>
-        Now that we have an idea and how the GPU "talks" with the rest of the system, learning how the GPU renders things should come next.
+        Now that we have an idea and how the GPU "talks" with the rest of the system, learning with what means the GPU renders things should come next.
         Rendering items is (in most cases) the main purpose of the GPU. One of the reasons it was invented was to accelerate graphics, as
-        integrated CPU graphics were not cutting it for some people.
+        integrated CPU graphics were not cutting it for some people. The GPU achieves this with a number of smart innovations that could save you hours of time.
     </p>
     <p>
         As I stated on the first page, the die of a GPU consists of thousands of cores, like the ones that you can find on a CPU. Both a 
@@ -38,8 +40,36 @@
         INTU (integer unit) for processing from the instructions that it recived. Following computation, the core transfers the result to the result queue and awaits new 
         instructions.
     </p>
-    <img class="centered_super_1" src="cuda_diagram.png" alt="A Map of the Modern GPU, with a circle on what we are focusing on which is the die now" height="540" width="720">
-
+    <img class="centered_super_1" src="cuda_diagram.png" alt="Diagram of a CUDA core" height="540" width="720">
+    <p>
+        Nvidia's Tensor cores are the "steriods" that they give thier GPUs that take artificial intelligence and deep learning to the 
+        next level. Unlike the normal cores that are more general purpose, Tensor cores are specialists designed for the high-demand 
+        calculations needed in the fields that require immense amount of calculations. Their superpower lies in a technique called mixed precision computation. These cores 
+        perform most of the work using a less detailed (but much faster) language, then switching to a more precise one for 
+        the final answer. Tensor cores achieve this by seamlessly working with two data formats: FP16, which is like a shorthand 
+        version of numbers, and FP32, the full and accurate representation of they work they just finished. This allows for quicker calculations while 
+        maintaining overall accuracy. But that's not all. Tensor cores also haver some more drugs called fused 
+        multiply-add. This stupidly fancy term means that they can combine two crucial mathematical steps, multiplication and 
+        addition, into a single operation. This fusion further accelerates the process compared to performing 
+        them separately, and wasting time. By combining these techniques with dedicated hardware within the GPU, Tensor cores become a 
+        powerhouse for deep learning, enabling Nvidia GPUs to tackle these complex tasks significantly faster.
+    </p>
+    <img class="centered_super_1" src="tensor_core_diagram.png" alt="Diagram of a Tensor core" height="1024" width="254">
+    <p>
+        When processing lighting effects, for the longest time, it has always been a challenge to create realistic 
+        lighting effects. You could almost alwasys tell that a frame was from a game, all because of the lighting. 
+        With Ray-Tracing cores (which can be found on AMD GPUs with the same name) the dedicated processors found in 
+        Nvidia's RTX GPUs that act like tiny light simulators in any required scenario. Unlike traditional rendering methods that 
+        rely on approximations, Ray-Tracing cores mimic the way light actually travels in the real world. They fire virtual 
+        rays of light from the viewpoint, which is the POV/camera, into the scene, simulating how they bounce off objects, 
+        cast shadows, and illuminate different areas, and eventually dull out. This meticulous process allows for incredibly 
+        realistic lighting effects, from lifelike reflections on shiny surfaces to subtle variations in shadows depending on 
+        the scene's geometry. However, these simulations are computationally expensive. Your average general-purpose CUDA core 
+        would not be able to render these scenes fast enough to play a game. This is where that dedicated hardware comes in. 
+        Although Ray-Traced games run with lower framerates, they are still an improvement over running the Ray-Traced game 
+        on just CUDA cores.
+    </p>
+    <img class="centered_super_1" src="ray_tracing.jpg" alt="Diagram of a RT core" height="1063" width="699">
 
     <!-- MAKE SURE TO UPDATE THE NEXT PAGE BUTTON!!-->
     <div class="container3">
@@ -52,6 +82,4 @@
     </div>
     <!-- https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/ -->
     <!-- https://www.wevolver.com/article/understanding-nvidia-cuda-cores-a-comprehensive-guide -->
-</head>
-<body>
 </body>
