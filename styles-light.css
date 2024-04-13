@@ -109,7 +109,20 @@ button {
 
 .container2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+}
+
+.container3 {
+    position: relative;
     width: 100%;
-    display: inline-block;
+}
+
+.container3 a:first-child {
+    position: absolute;
+    left: 0;
+}
+
+.container3 a:last-child {
+    position: absolute;
+    right: 0;
 }
