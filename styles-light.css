@@ -100,9 +100,16 @@ button {
     display: inline-block; /* Ensure image behaves like a block element */
 }
 
+.centered_super_1 {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin: 0 auto; /* Ensure the image is horizontally centered */
+}
 
 .container2 {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    display: inline-block;
 }
