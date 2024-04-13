@@ -24,8 +24,32 @@
         of GPU core. The first type is the CUDA core, which is used for any type of rendering. It is general purpose, and has amazing
         parellel computing power. AMD developed Stream Processors in order to compete with CUDA. Tensor cores, which came a fair bit 
         later, were focused on mastery of floating bit integers, and things of that such. Each Tensor cores consists of a 4X4 processing
-        matrix. 
+        matrix, and requires a lot of knowledge to write code for.
     </p>
+    <p>I will be using Nvidia's cores as examples, as AMD does have counterparts, but lacks market share at the moment.</p>
+    <p>
+        When you take a look at a GPU's specs, you can see that the number of CUDA cores is often one of the highest, if not the 
+        highest, numbers on the page. These numbers reflect the significance of CUDA, which can enabling calculations at large scales 
+        and high speeds. Contrary to the idea of instructions starting at the "beginning" (the top of the core in the diagram) of the core, instructions in a CUDA core 
+        can run concurrently, thanks to the dispatch port, which provides instructions to the core. Moreover, modern GPU architectures 
+        leverage mechanisms like instruction pipelining and instruction-level parallelism to overlap instruction execution with data 
+        fetching, minimizing idle time. The core then proceeds to fetch necessary input data from memory or registers before executing 
+        the command from the dispatch port. Subsequently, the core determines whether to utilize the FPU (floating point unit) or the 
+        INTU (integer unit) for processing from the instructions that it recived. Following computation, the core transfers the result to the result queue and awaits new 
+        instructions.
+    </p>
+    <img class="centered_super_1" src="cuda_diagram.png" alt="A Map of the Modern GPU, with a circle on what we are focusing on which is the die now" height="720" width="540">
+
+
+    <!-- MAKE SURE TO UPDATE THE NEXT PAGE BUTTON!!-->
+    <div class="container3">
+        <a href="https://gpuhaven.github.io/pg_1.html">
+            <button>Previous Page</button>
+        </a>
+        <a href="https://gpuhaven.github.io/index.html">
+            <button>Next Page</button>
+        </a>
+    </div>
     <!-- https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/ -->
     <!-- https://www.wevolver.com/article/understanding-nvidia-cuda-cores-a-comprehensive-guide -->
 </head>
