@@ -103,10 +103,5 @@ button {
 
 .container2 {
     display: flex;
-    justify-content: right;
-}
-
-.container3 {
-    display: flex;
-    justify-content: left;
+    justify-content: space-between;
 }
