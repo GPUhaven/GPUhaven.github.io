@@ -9,6 +9,7 @@
     <h6>By ScotXW - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=61055349</h6>
 </head>
 <body>
+    <h2>Overview</h2>
     <p>
         Now that we have an idea and how the GPU "talks" with the rest of the system, learning with what means the GPU renders things should come next.
         Rendering items is (in most cases) the main purpose of the GPU. One of the reasons it was invented was to accelerate graphics, as
@@ -29,6 +30,7 @@
         matrix, and requires a lot of knowledge to write code for.
     </p>
     <p>I will be using Nvidia's cores as examples, as AMD does have counterparts, but lacks market share at the moment.</p>
+    <h2>CUDA Cores</h2>
     <p>
         When you take a look at a GPU's specs, you can see that the number of CUDA cores is often one of the highest, if not the 
         highest, numbers on the page. These numbers reflect the significance of CUDA, which can enabling calculations at large scales 
@@ -41,6 +43,7 @@
         instructions.
     </p>
     <img class="centered_super_1" src="cuda_diagram.png" alt="Diagram of a CUDA core" height="270" width="360">
+    <h2>Tensor Cores</h2>
     <p>
         Nvidia's Tensor cores are the "steriods" that they give thier GPUs that take artificial intelligence and deep learning to the 
         next level. Unlike the normal cores that are more general purpose, Tensor cores are specialists designed for the high-demand 
@@ -55,6 +58,7 @@
         powerhouse for deep learning, enabling Nvidia GPUs to tackle these complex tasks significantly faster.
     </p>
     <img class="centered_super_1" src="tensor_core_diagram.png" alt="Diagram of a Tensor core" height="127" width="512">
+    <h2>Ray-Tracing Cores</h2>
     <p>
         When processing lighting effects, for the longest time, it has always been a challenge to create realistic 
         lighting effects. You could almost alwasys tell that a frame was from a game, all because of the lighting. 
