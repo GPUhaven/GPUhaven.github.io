@@ -104,4 +104,5 @@ button {
 .container2 {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
