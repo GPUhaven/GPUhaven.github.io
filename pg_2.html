@@ -62,12 +62,12 @@
         Nvidia's RTX GPUs that act like tiny light simulators in any required scenario. Unlike traditional rendering methods that 
         rely on approximations, Ray-Tracing cores mimic the way light actually travels in the real world. They fire virtual 
         rays of light from the viewpoint, which is the POV/camera, into the scene, simulating how they bounce off objects, 
-        cast shadows, and illuminate different areas, and eventually dull out. This meticulous process allows for incredibly 
-        realistic lighting effects, from lifelike reflections on shiny surfaces to subtle variations in shadows depending on 
-        the scene's geometry. However, these simulations are computationally expensive. Your average general-purpose CUDA core 
+        cast shadows, and illuminate different areas, and eventually dull out. This long process allows for incredibly 
+        realistic lighting effects, from lifelike reflections on shiny surfaces to subtle changes in shadows depending on 
+        the scene's look. However, these simulations are computationally expensive, and take forever to do. Your average general-purpose CUDA core 
         would not be able to render these scenes fast enough to play a game. This is where that dedicated hardware comes in. 
         Although Ray-Traced games run with lower framerates, they are still an improvement over running the Ray-Traced game 
-        on just CUDA cores.
+        on just CUDA cores. 
     </p>
     <img class="centered_super_1" src="ray_tracing.jpg" alt="Diagram of a RT core" height="350" width="532">
 
