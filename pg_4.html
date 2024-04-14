@@ -12,9 +12,34 @@
 <body>
     <h2>Overview</h2>
     <p>
-        The GMC is a 7481274832974892
+        The GMC (Graphics Memory Controller) within a GPU serves as a component responsible for 
+        managing the flow of data between the cores of the GPU and its dedicated memory, often 
+        referred to as Video RAM (VRAM). The GMC optimizes memory access and allocation, ensuring 
+        that the GPU efficiently utilizes its memory resources to store and manipulate graphics 
+        data. The GPU relies on VRAM to store textures, shaders, frame buffers, and other assets 
+        needed for rendering images and animations. VRAM is often the limit to what your GPU can 
+        render, as the more VRAM you have, the higher the resolution you can render. The GMC plays 
+        a crucial role in the read and write operations to and from VRAM, and optimizing data 
+        transfers with precision to minimize latency and maximize throughput.
     </p>
-
+    <h2>Functions and Technologies</h2>
+    <p>
+        One of the primary functions of the GMC is memory arbitration, which involves prioritizing 
+        memory requests from places inside the GPU. By properly scheduling memory accesses, the GMC 
+        prevents bottlenecks and optimizes the GPU's overall performance. Additionally, the GMC 
+        manages memory readability, making sure that data stored in different caches within the 
+        GPU remains consistent and up-to-date. This is vital for maintaining the integrity of 
+        rendered images and avoiding artifacts or visual glitches.
+    </p>
+    <p>
+        With this, the GMC often incorporates advanced memory management techniques, such as memory 
+        compression and virtual memory mapping, to help with memory bandwidth utilization and overall 
+        efficiency. These techniques help mitigate the limitations imposed by the finite bandwidth of 
+        the memory interface, allowing the GPU to handle increasingly complex graphics workloads with 
+        ease. Thus, the Graphics Memory Controller serves as a vital component of the GPU's architecture, 
+        optimizing memory access and utilization to support the demanding requirements of modern graphics 
+        rendering and computation.
+    </p>
 
     <div class="container3">
         <a href="https://gpuhaven.github.io/pg_3.html">
